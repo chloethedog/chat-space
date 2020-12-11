@@ -1,0 +1,38 @@
+.MainChat
+  .RightHeader
+    .GroupInfo
+      .GroupInfo__groupName
+        sample
+      %ul.GroupInfo__memberLists
+        Member : 
+        %li.GroupInfo__memberLists__member
+          test
+        %li.GroupInfo__memberLists__member
+          test
+    .Edit
+      .EditBtn
+        %a{ href: "#"}Edit 
+  .MessageLists
+    .MessageBox
+      .MessageInfo
+        .Name
+          NAME
+        .DateTime
+          2020.12.9 18:00
+      .Message
+        hello
+    .MessageBox
+      .MessageInfo
+        .Name
+          NAME
+        .DateTime
+          2020.12.9 18:00
+      .Message
+        hello
+  .Footer 
+    %form.MessageForm
+      %input.MessageForm__newMessage{"placeholder": "type a message", "type": "text"}
+      %label.MessageForm__picIcon
+        = icon('far', 'image')
+        %input.MessageForm__picIcon__file{type: "file"}
+    %input.SendBtn{"type": "submit", "value": "Send"}
