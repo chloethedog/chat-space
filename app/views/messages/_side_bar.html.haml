@@ -2,13 +2,13 @@
   .LeftHeader
     .LeftHeaderBox
       .Username
-        name
+        = current_user.name
       .Icons
         .Icon__left
           = link_to "#", class:"Icon__left" do
             = icon('far', 'edit')
         .Icon__right  
-          = link_to "#", class:"Icon__right" do  
+          = link_to edit_user_path(current_user), class:"Icon__right" do  
             = icon('fas', 'cog')
   .GroupLists
     .Group
