@@ -52,6 +52,9 @@
       box-sizing: border-box;
       .Group {
         width: calc( 300px - 40px );
+        a {
+          text-decoration: none;
+        }
         &__name {
           color: #ffffff;
           font-size: 15px;
@@ -62,7 +65,7 @@
           font-size: 11px;
           margin-bottom: 40px;
         }
-      }
+      }  
     }
   }
   .MainChat {
