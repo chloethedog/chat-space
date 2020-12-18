@@ -139,6 +139,9 @@
           color: #434a54;
           font-size: 14px;
           margin-bottom: 46px;
+          &__image {
+            height: 400px;
+          }
         }
       }  
     }
@@ -148,38 +151,45 @@
       display: flex;
       align-items: center;
       padding: 0px 40px;
-      .MessageForm {
+      .Form {
         height: 50px;
         width: 100%;
         display: flex;
-        position: relative;
-        &__newMessage {
-          background-color: #fafafa;
-          height: 100%;
+        .MessageForm {
           width: 100%;
-          padding: 0px 10px;
+          display: flex;
+          position: relative;
+          &__content {
+            background-color: #fafafa;
+            height: 100%;
+            width: 100%;
+            padding: 0px 45px 0px 10px;
+            border-style: none;
+          }  
+          &__image {
+            text-decoration: none; 
+            position: absolute;
+            align-items: center;
+            top: 10px;
+            right: 10px;
+            &__icon {
+              font-size: 1.3rem;
+            }
+            &__hidden {
+              display: none;
+            }
+          }  
+        }
+        .SendBtn {
+          background-color: #38aef0;
+          height: 50px;
+          color: #fff;
+          font-size: 16px;
+          padding: 0px 30px;
+          margin-left: 15px;
           border-style: none;
-        }  
-        &__picIcon {
-          text-decoration: none; 
-          font-size: 1.3rem;
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          &__file {
-            display: none;
-          }
         }
       }  
-      input.SendBtn {
-        background-color: #38aef0;
-        height: 50px;
-        color: #fff;
-        font-size: 16px;
-        padding: 0px 30px;
-        margin-left: 15px;
-        border-style: none;
-      }
     }
   }
 }

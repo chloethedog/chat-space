@@ -2,37 +2,23 @@
   .RightHeader
     .GroupInfo
       .GroupInfo__groupName
-        sample
+        = @group.name
       %ul.GroupInfo__memberLists
         Member : 
-        %li.GroupInfo__memberLists__member
-          test
-        %li.GroupInfo__memberLists__member
-          test
+        - @group.users.each do |user|
+          %li.GroupInfo__memberLists__member
+            = user.name           
     .Edit
       .EditBtn
-        %a{ href: "#"}Edit 
+        = link_to edit_group_path(@group.id), method: :get do
+          = 'Edit'
   .MessageLists
-    .MessageBox
-      .MessageInfo
-        .Name
-          NAME
-        .DateTime
-          2020.12.9 18:00
-      .Message
-        hello
-    .MessageBox
-      .MessageInfo
-        .Name
-          NAME
-        .DateTime
-          2020.12.9 18:00
-      .Message
-        hello
+    = render @messages
   .Footer 
-    %form.MessageForm
-      %input.MessageForm__newMessage{"placeholder": "type a message", "type": "text"}
-      %label.MessageForm__picIcon
-        = icon('far', 'image')
-        %input.MessageForm__picIcon__file{type: "file"}
-    %input.SendBtn{"type": "submit", "value": "Send"}
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .MessageForm 
+        = f.text_field :content, class: 'MessageForm__content', placeholder: "type a message"
+        = f.label :image, class: 'MessageForm__image' do
+          = icon('far', 'image', class: 'MessageForm__image__icon')
+          = f.file_field :image, class: 'MessageForm__image__hidden'
+      =f.submit 'Send', class: 'SendBtn'
